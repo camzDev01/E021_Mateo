@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marimba Tesoro Chapín - Ritmos con Alma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS - Diseño Orgánico y Artesanal */
+        :root {
+            --warm-brown: #8B4513; /* Marrón cálido (madera) */
+            --soft-green: #6B8E23; /* Verde oliva (follaje) */
+            --cream-white: #F5F5DC; /* Blanco crema (papel artesanal) */
+            --ochre-yellow: #DAA520; /* Amarillo ocre (acento) */
+            --dark-text: #4A4A4A;
+            --light-text: #F8F8F8;
+            --shadow-light: rgba(0,0,0,0.08);
+            --shadow-medium: rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif; /* Más amigable */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--dark-text);
+            line-height: 1.7;
+            background-color: var(--cream-white); /* Fondo suave */
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--warm-brown); /* Marrón cálido para header */
+            color: var(--light-text);
+            padding: 1.5em 0;
+            box-shadow: 0 4px 10px var(--shadow-medium);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif; /* Tipo más clásico para el logo */
+            font-size: 2em;
+            color: var(--ochre-yellow); /* Color acento para el logo */
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 400;
+            padding: 8px 12px;
+            border-radius: 25px; /* Bordes redondeados para los enlaces */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--ochre-yellow);
+        }
+
+        .hero {
+            position: relative;
+            height: 75vh; /* Más grande aún para un impacto orgánico */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: brightness(0.5); /* Oscurecer para texto */
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 40px;
+            max-width: 900px;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente suave */
+            border-radius: 15px; /* Bordes muy redondeados */
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .hero h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            color: var(--ochre-yellow);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-top: 0;
+            color: var(--light-text);
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--soft-green); /* Botón verde suave */
+            color: var(--light-text);
+            padding: 15px 40px;
+            border-radius: 30px; /* Bordes redondeados */
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 15px var(--shadow-medium);
+        }
+
+        .button:hover {
+            background-color: #597F1D; /* Verde un poco más oscuro */
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 90px 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+            background-color: var(--secondary-bg);
+            margin-bottom: 50px;
+            border-radius: 15px; /* Bordes suaves */
+            box-shadow: 0 8px 20px var(--shadow-light);
+        }
+
+        section h2 {
+            font-family: 'Merriweather', serif;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--warm-brown); /* Título en marrón cálido */
+            font-size: 3em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--ochre-yellow); /* Subrayado de acento */
+            border-radius: 2px;
+        }
+
+        #nosotros .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #nosotros .about-content img {
+            max-width: 550px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px var(--shadow-medium);
+            object-fit: cover;
+            height: 400px;
+            transition: transform 0.4s ease;
+        }
+        #nosotros .about-content img:hover {
+            transform: scale(1.03);
+        }
+
+        #nosotros .about-text {
+            flex: 1;
+            min-width: 350px;
+            line-height: 1.9;
+            color: var(--dark-text);
+        }
+        #nosotros .about-text p {
+            margin-bottom: 1.2em;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            background-color: var(--primary-bg); /* Fondo más claro para los ítems */
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-light);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid var(--border-color); /* Borde sutil */
+        }
+
+        .service-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+        }
+
+        .service-item h3 {
+            color: var(--warm-brown);
+            font-family: 'Merriweather', serif;
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+        .service-item img {
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px var(--shadow-medium);
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img, .gallery-item iframe {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: 300px; /* Mayor altura para las imágenes de la galería */
+        }
+
+        .repertoire-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .repertoire-item {
+            background-color: var(--primary-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-light);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .repertoire-item:hover {
+            background-color: #E0E0D6; /* Un crema más oscuro */
+            box-shadow: 0 6px 15px var(--shadow-medium);
+        }
+
+        .repertoire-item h3 {
+            color: var(--warm-brown);
+            font-family: 'Merriweather', serif;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .repertoire-item p {
+            color: #666;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-item {
+            background-color: var(--primary-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px var(--shadow-medium);
+            border-left: 8px solid var(--ochre-yellow); /* Borde más pronunciado */
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .testimonial-item .author {
+            font-weight: 700;
+            text-align: right;
+            color: var(--warm-brown);
+            font-size: 1.1em;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            justify-content: center;
+        }
+
+        .contact-info, .contact-form-container {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        .contact-info {
+            background-color: var(--primary-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-light);
+            text-align: center;
+        }
+        .contact-info h3 {
+            color: var(--warm-brown);
+            font-family: 'Merriweather', serif;
+            margin-bottom: 25px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: var(--soft-green); /* Enlaces en verde suave */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--warm-brown);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            margin: 0 15px;
+            display: inline-block;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .social-links img:hover {
+            transform: scale(1.15);
+        }
+
+        .contact-form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 40px;
+            background-color: var(--primary-bg);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-light);
+        }
+
+        .contact-form-container label {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--warm-brown);
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .contact-form-container input,
+        .contact-form-container select,
+        .contact-form-container textarea {
+            padding: 15px;
+            border: 1px solid var(--ochre-yellow); /* Borde de acento */
+            border-radius: 8px; /* Bordes ligeramente redondeados */
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1em;
+            background-color: var(--secondary-bg); /* Fondo blanco puro para inputs */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form-container input:focus,
+        .contact-form-container select:focus,
+        .contact-form-container textarea:focus {
+            border-color: var(--soft-green);
+            box-shadow: 0 0 0 4px rgba(107, 142, 35, 0.2); /* Sombra de enfoque suave */
+            outline: none;
+        }
+
+        .contact-form-container textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form-container button {
+            background-color: var(--soft-green);
+            color: var(--light-text);
+            padding: 16px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 15px var(--shadow-medium);
+        }
+
+        .contact-form-container button:hover {
+            background-color: #597F1D;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            background-color: var(--warm-brown);
+            color: var(--light-text);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 5px solid var(--ochre-yellow); /* Borde superior de acento */
+        }
+
+        footer .external-links {
+            margin-bottom: 25px;
+        }
+
+        footer .external-links a {
+            color: var(--ochre-yellow);
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        footer .external-links a:hover {
+            color: var(--light-text);
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            .logo {
+                margin-bottom: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 5px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2.8em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+            section h2 {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+
+            #nosotros .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            #nosotros .about-content img {
+                width: 100%;
+                max-width: 450px;
+                height: auto; /* Ajustar altura automáticamente */
+            }
+
+            .service-grid, .gallery-grid, .repertoire-list, .testimonial-grid {
+                grid-template-columns: 1fr; /* Una columna para móviles */
+            }
+            .service-item, .repertoire-item, .testimonial-item {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+            .contact-info, .contact-form-container {
+                min-width: unset;
+                width: 100%;
+            }
+
+            footer .external-links a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .button {
+                padding: 10px 25px;
+                font-size: 0.9em;
+            }
+            section h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#inicio" class="logo">Marimba Tesoro Chapín</a>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#repertorio">Repertorio</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <img src="banner.jpg" alt="Marimba Artesanal de Guatemala al Atardecer">
+            <div class="hero-content">
+                <h2>El Alma de Guatemala en Cada Nota</h2>
+                <p>Música con Corazón, Hecha con Pasión.</p>
+                <a href="#contacto" class="button">Contrátanos Ahora</a>
+            </div>
+        </section>
+
+        <section id="nosotros">
+            <h2>Nuestra Esencia y Tradición</h2>
+            <div class="about-content">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcQGyRrbGAV860ku1YvsbThpPFBK2tSHmmC-6-8oA01AO2MIeZD27wJxZX-WCkL41XZFo&usqp=CAU" alt="Equipo de Marimba Tesoro Chapín en Ambiente Rústico">
+                <div class="about-text">
+                    <p>En **Marimba Tesoro Chapín**, somos custodios de la rica herencia musical de Guatemala. Fundada en **[Año de Fundación, ej: 1978]** por **[Nombre de Fundador/es, ej: la familia Xochitl]**, hemos crecido con la misión de compartir la belleza y la emoción de la marimba tradicional y contemporánea.</p>
+                    <p>Nuestro ensamble de **[Número de integrantes, ej: 8 dedicados músicos]** está comprometido con la autenticidad y la excelencia, llevando la calidez de nuestro sonido a cada rincón. Cada interpretación es un testimonio de nuestra pasión por el instrumento nacional y un puente cultural que une a las personas a través de la melodía.</p>
+                    <p>Nos enorgullece ser parte de tus momentos especiales, ofreciendo una experiencia musical que resonará en tu corazón.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <h2>Melodías para Cada Celebración</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Bodas con Encanto</h3>
+                    <p>Creamos el ambiente sonoro perfecto para tu unión, desde ceremonias íntimas hasta grandes recepciones, con toques de elegancia y tradición.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Eventos Corporativos Distinguidos</h3>
+                    <p>Añade un elemento cultural sofisticado a tus eventos empresariales. Nuestra música elevará la experiencia de tus invitados y clientes.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Fiestas Privadas y Familiares</h3>
+                    <p>Celebra la vida con el ritmo contagioso de la marimba. Personalizamos nuestro repertorio para que tu fiesta sea inolvidable y llena de alegría.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Actuaciones Culturales y Educativas</h3>
+                    <p>Nos dedicamos a educar y deleitar, ofreciendo presentaciones para festivales, escuelas y eventos que buscan destacar la riqueza de la música chapina.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Nuestra Música en Imágenes y Sonido</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMceAymSKSLKf5QdOrrxrQoLAw5SnXwiLsCA&s" alt="Marimba en Concierto en Ambiente Natural">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Nh91mzEycfnOJbUuvjEfa15X8X5r_kzPtw&s" alt="Detalle de las Barras de Madera de la Marimba">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmJ1yrG92uaNFoJutU9M-2EO7gDhuCuadbMyJs9ELkniU1D1OUajF7wlyd4V35Fd9nU0&usqp=CAU" alt="Armonía del Grupo Marimba Tesoro Chapín">
+                </div>
+                <div class="gallery-item video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rxd2fg621kk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+            </div>
+        </section>
+
+        <section id="repertorio">
+            <h2>Un Repertorio Tan Rico Como Nuestra Tierra</h2>
+            <div class="repertoire-list">
+                <div class="repertoire-item">
+                    <h3>Sones Folclóricos y Tradicionales</h3>
+                    <p>Revive la magia de "Luna de Xelajú", "Chichicastenango" y otros clásicos que definen la identidad musical guatemalteca.</p>
+                </div>
+                <div class="repertoire-item">
+                    <h3>Cumbias y Ritmos Tropicales</h3>
+                    <p>La energía que enciende la pista de baile, con cumbias alegres y adaptaciones que invitan a moverse.</p>
+                </div>
+                <div class="repertoire-item">
+                    <h3>Boleros y Melodías Románticas</h3>
+                    <p>Suavidad y sentimiento en cada interpretación, ideal para momentos que piden un toque de dulzura y romance.</p>
+                </div>
+                <div class="repertoire-item">
+                    <h3>Variedad y Adaptaciones</h3>
+                    <p>Exploramos géneros modernos e internacionales, adaptándolos a la marimba para ofrecer una experiencia única y versátil.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="clientes">
+            <h2>Voces que Confían en Nuestra Música</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"La Marimba Tesoro Chapín hizo de nuestra boda un evento mágico. Su talento y profesionalismo son inigualables. ¡Absolutamente recomendados!"</p>
+                    <p class="author">- Lucía y Mateo (Novios)</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Contratar a Marimba Tesoro Chapín para nuestra gala anual fue un acierto total. Aportaron un toque cultural y de clase que encantó a todos los asistentes."</p>
+                    <p class="author">- Marketing Dept., Global Corp.</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Cada fiesta familiar es más especial con la música de Tesoro Chapín. Su alegría y dedicación son contagiosas, siempre superan nuestras expectativas."</p>
+                    <p class="author">- La Familia Castellanos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Conectemos: Tu Evento, Nuestra Música</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información Directa</h3>
+                    <p><strong>Teléfono:</strong> <a href="tel:+50287654321">(+502) 8765-4321</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:contacto@marimbatesorochapin.com">contacto@marimbatesorochapin.com</a></p>
+                    <p><strong>Horario de Atención:</strong> Lunes a Sábado, 8:30 AM - 6:00 PM</p>
+                    <p><strong>Ubicación:</strong> Antigua Guatemala, Sacatepéquez, Guatemala</p>
+                    <p>Encuéntranos en redes sociales:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/tumarimbaorganica" target="_blank" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/50/6B8E23/facebook-new.png" alt="Facebook" style="width: 35px; height: 35px;"></a>
+                        <a href="https://www.instagram.com/tumarimbaorganica" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/50/6B8E23/instagram-new.png" alt="Instagram" style="width: 35px; height: 35px;"></a>
+                        <a href="https://www.youtube.com/tumarimba" target="_blank" aria-label="YouTube"><img src="https://img.icons8.com/ios-filled/50/6B8E23/youtube-play--v1.png" alt="YouTube" style="width: 35px; height: 35px;"></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Solicita Tu Cotización Personalizada</h3>
+                    <form id="cotizacionForm">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="telefono">Número de Teléfono (Opcional):</label>
+                        <input type="tel" id="telefono" name="telefono">
+
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais" required>
+                            <option value="">Selecciona tu país</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Mexico">México</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                            <option value="Canada">Canadá</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Panama">Panamá</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+
+                        <label for="pasatiempos">¿Cuáles son tus pasatiempos o intereses musicales?</label>
+                        <textarea id="pasatiempos" name="pasatiempos" rows="4"></textarea>
+
+                        <label for="tipoEvento">Tipo de Evento:</label>
+                        <select id="tipoEvento" name="tipoEvento" required>
+                            <option value="">Selecciona el tipo de evento</option>
+                            <option value="Boda">Boda</option>
+                            <option value="Evento Corporativo">Evento Corporativo</option>
+                            <option value="Fiesta Privada">Fiesta Privada</option>
+                            <option value="Celebracion Cultural">Celebración Cultural</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+
+                        <label for="fechaEvento">Fecha Tentativa del Evento:</label>
+                        <input type="date" id="fechaEvento" name="fechaEvento">
+
+                        <label for="comentarios">Cuéntanos más sobre tu evento:</label>
+                        <textarea id="comentarios" name="comentarios" rows="6"></textarea>
+
+                        <button type="submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="external-links">
+            <a href="https://mcd.gob.gt/" target="_blank">Explora la Cultura de Guatemala</a>
+            <a href="https://es.wikipedia.org/wiki/Marimba" target="_blank">Descubre la Historia de la Marimba</a>
+        </div>
+        <p>© 2024 Marimba Tesoro Chapín. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para la funcionalidad de desplazamiento suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // JavaScript para manejar el envío del formulario (ejemplo simple)
+        document.getElementById('cotizacionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                pais: document.getElementById('pais').value,
+                pasatiempos: document.getElementById('pasatiempos').value,
+                tipoEvento: document.getElementById('tipoEvento').value,
+                fechaEvento: document.getElementById('fechaEvento').value,
+                comentarios: document.getElementById('comentarios').value
+            };
+
+            console.log('Datos del formulario:', formData);
+
+            alert('¡Gracias por tu solicitud, ' + formData.nombre + '! Nos pondremos en contacto contigo pronto para tu evento.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
